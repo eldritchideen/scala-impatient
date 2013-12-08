@@ -10,7 +10,7 @@ import java.util.Scanner
 import java.io.File
 import scala.collection.mutable.ArrayBuffer
 
-class Chapter4Test extends  FunSuite with Matchers{
+class Chapter4Test extends FunSuite with Matchers {
 
   test("Discount is applied") {
     val products = Map("Nexus 7" -> 450, "iPad" -> 1000)
