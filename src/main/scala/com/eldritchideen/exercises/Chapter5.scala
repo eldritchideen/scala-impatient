@@ -51,3 +51,50 @@ public com.eldritchideen.exercises.Student(java.lang.String, int);
 }
 
 */
+
+
+// Exercise 6
+// primary constructor ensures that negative parameters are 0 on creation.
+class Counter(private var value: Int) {
+  if (value < 0) value = 0
+
+  def increment() = {value += 1}
+  def current() = value
+}
+
+// Exercise 7
+class Person(fullName: String) {
+  val firstName = fullName.split(' ')(0)
+  val lastName = fullName.split(' ')(1)
+}
+
+// Exercise 8
+class Car(val manufacturer:String, val model:String, val year:Int, var licensePlate:String) {
+
+  def this(manufacturer:String, model:String) {
+    this(manufacturer, model, -1, "")
+  }
+
+  def this(manufacturer:String, model:String, year:Int) {
+    this(manufacturer, model, year, "")
+  }
+
+  def this(manufacturer:String, model:String, licensePlate:String) {
+    this(manufacturer, model, -1, licensePlate)
+  }
+}
+
+// Exercise 10
+class Employee {
+  private var _name: String = "John Q. Public"
+  private var _salary: Double = 0.0
+
+  def this(name: String, salary:Double) {
+    this()
+    this._name = name
+    this._salary = salary
+  }
+
+  def name = _name
+  def salary = _salary
+}
