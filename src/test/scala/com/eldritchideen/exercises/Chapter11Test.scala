@@ -16,7 +16,9 @@ trait Monies {
 
 class Chapter11Test extends FunSuite with Matchers with Monies {
 
-
+  test("toString method") {
+    m1.toString should equal("Money(1, 50)")
+  }
 
   test("creation of Money") {
     assert(m0.dollars === 0)

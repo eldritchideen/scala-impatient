@@ -37,7 +37,7 @@ class Money(val dollars: Int, val cents: Int) {
 
   }
 
-  override def toString() = {
+  override def toString = {
     "Money(%d, %d)".format(dollars, cents)
   }
 
