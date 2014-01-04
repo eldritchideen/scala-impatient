@@ -56,6 +56,7 @@ class BitSequence {
   def bitMask(bit:Byte) = 1<<bit
 
   def apply(bitIndex:Byte) = {
+    assert(bitIndex < 64, "index must be 0 to 63")
     if ((bits & bitMask(bitIndex)) > 0) 1 else 0
   }
 

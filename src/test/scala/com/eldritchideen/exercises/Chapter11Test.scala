@@ -52,6 +52,7 @@ class BitSequenceTest extends FunSuite with Matchers {
     b(1) = 1
     b.toString should equal("11")
     an [java.lang.AssertionError] should be thrownBy (b(4) = 5)
+    an [java.lang.AssertionError] should be thrownBy b(70)
     b(1) should equal(1)
     b(1) = 0
     b(1) should equal(0)
