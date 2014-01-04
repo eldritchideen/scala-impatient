@@ -3,9 +3,7 @@ package com.eldritchideen.exercises
 /**
  * Created by sjc on 3/01/14.
  */
-class Chapter11 {
-
-}
+class Chapter11
 
 /**
  * Simple class representing Monetary amounts in dollars and cents.
@@ -44,4 +42,33 @@ class Money(val dollars: Int, val cents: Int) {
   private def totalCents(amount: Money) = {
     (amount.dollars * 100) + amount.cents
   }
+}
+
+/**
+ * Exercise 7
+ * Simple class to set and get bits within a long.
+ * Demonstrating how to use apply and unapply with a class.
+ *
+ */
+class BitSequence {
+  private var bits: Long = 0L
+
+  def bitMask(bit:Byte) = 1<<bit
+
+  def apply(bitIndex:Byte) = {
+    if ((bits & bitMask(bitIndex)) > 0) 1 else 0
+  }
+
+  def update(bitIndex:Byte, value:Int) = {
+    assert(value == 1 || value == 0, "value must be either 0 or 1")
+    if (value == 1)
+      bits |= bitMask(bitIndex)
+    else
+      bits &= ~bitMask(bitIndex)
+  }
+
+  override def toString = {
+    bits.toBinaryString
+  }
+
 }

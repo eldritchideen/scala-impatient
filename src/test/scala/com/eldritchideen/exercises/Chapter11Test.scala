@@ -42,3 +42,18 @@ class Chapter11Test extends FunSuite with Matchers with Monies {
   }
 
 }
+
+class BitSequenceTest extends FunSuite with Matchers {
+
+  test("Bit Sequence Tests") {
+    val b = new BitSequence
+
+    b(0) = 1
+    b(1) = 1
+    b.toString should equal("11")
+    an [java.lang.AssertionError] should be thrownBy (b(4) = 5)
+    b(1) should equal(1)
+    b(1) = 0
+    b(1) should equal(0)
+  }
+}
